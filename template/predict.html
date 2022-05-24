@@ -1,0 +1,319 @@
+{% extends 'base.html' %}
+
+{% block title %} index {% endblock title %}
+{% block clink%}active{% endblock clink%}
+{% block body %}
+
+<div class="container py-5" style="margin: 0 auto;">
+   
+    <div class="main">
+        <h2 class="text-center text-white py-2 bg-success bg-gradient">Welcome to diabetes perdiction center</h2>   
+        <h3  class="text-center text-info ">Please enter following information</h3>
+        {% comment %} <p>
+            <a href="#" data-mdb-toggle="tooltip" title="Hi! I'm tooltip">tooltip</a>
+          </p> {% endcomment %}
+        <h4  class="text-center text-Dark py-2" ><div class="text-success"> <span class="text-primary">Result</span>  : {{result2}} </div></h4>
+        <form action="result">
+            <table class="table">
+                <tr>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;" >Age </td>
+                    <td align="left"><input type="number" class="form-control" placeholder="Enter your Age" name="n1"></td>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <label class="control-label" for="appointmentfor">Gender</label>
+                        <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <select id="appointmentfor" name="n2" type="text" class="form-control control-label">
+                            <option value="Male" selected>Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        </td>
+                    </td>
+                    {% comment %} <td align="right" class="text-success" style="font-weight:Bold;">Gender</td>
+                    <td align="left"><input type="text" class="form-control " placeholder="0 for female 1 for male" name="n2"></td>   {% endcomment %}
+                </tr>
+    
+                <tr>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <label class="control-label" for="appointmentfor">Polyuria</label>
+                        <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <select id="appointmentfor" name="n3" type="text" class="form-control control-label">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </td>
+                    </td>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <label class="control-label" for="appointmentfor">Polydipsia</label>
+                        <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <select id="appointmentfor" name="n4" type="text" class="form-control control-label">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </td>
+                    </td>
+{% comment %}                     
+                    <td align="right" class="text-success" style="font-weight:Bold;">Polyuria</td>
+                    <td align="left"><input type="text" class="form-control" placeholder="Enter 1/0" name="n3"></td>
+                
+                    <td align="right" class="text-success" style="font-weight:Bold;">Polydipsia</td>
+                    <td align="left"><input type="text" class="form-control" placeholder="Enter 1/0" name="n4"></td> {% endcomment %}
+                </tr>
+                <tr>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <label class="control-label" for="appointmentfor">Sudden Weight loss</label>
+                        <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <select id="appointmentfor" name="n5" type="text" class="form-control control-label">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </td>
+                    </td>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <label class="control-label" for="appointmentfor">Weakness</label>
+                        <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <select id="appointmentfor" name="n6" type="text" class="form-control control-label">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </td>
+                    </td>
+                    {% comment %} <td align="right" class="text-success" style="font-weight:Bold;">Sudden Weight loss</td>
+                    <td align="left"><input type="text" class="form-control" placeholder="Enter 1/0" name="n5"></td>
+               
+                    <td align="right" class="text-success" style="font-weight:Bold;">Weakness</td>
+                    <td align="left"><input type="text" class="form-control" placeholder="Enter 1/0" name="n6"></td> {% endcomment %}
+                </tr>
+                <tr>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <label class="control-label" for="appointmentfor">Polyphagia</label>
+                        <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <select id="appointmentfor" name="n7" type="text" class="form-control control-label">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </td>
+                    </td>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <label class="control-label" for="appointmentfor">Genital_thrush</label>
+                        <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <select id="appointmentfor" name="n8" type="text" class="form-control control-label">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </td>
+                    </td>
+                    {% comment %} <td align="right" class="text-success" style="font-weight:Bold;">Polyphagia</td>
+                    <td align="left"><input type="ra" class="form-control" placeholder="Enter 1/0" name="n7"></td>
+                
+                    <td align="right" class="text-success" style="font-weight:Bold;">Genital_thrush</td>
+                    <td align="left"><input type="text" class="form-control " placeholder="Enter 1/0" name="n8"></td> {% endcomment %}
+                </tr>
+                <tr>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <label class="control-label" for="appointmentfor">Visual blurring</label>
+                        <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <select id="appointmentfor" name="n9" type="text" class="form-control control-label">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </td>
+                    </td>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <label class="control-label" for="appointmentfor">Itching</label>
+                        <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <select id="appointmentfor" name="n10" type="text" class="form-control control-label">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </td>
+                    </td>
+                    {% comment %} <td align="right" class="text-success" style="font-weight:Bold;">Visual blurring</td>
+                    <td align="left"><input type="text" class="form-control" placeholder="Enter 1/0" name="n9"></td>
+                
+                    <td align="right" class="text-success" style="font-weight:Bold;">Itching</td>
+                    <td align="left"><input type="text" class="form-control" placeholder="Enter 1/0" name="n10"></td> {% endcomment %}
+                </tr>
+                <tr>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <label class="control-label" for="appointmentfor">Irritability:</label>
+                        <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <select id="appointmentfor" name="n11" type="text" class="form-control control-label">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </td>
+                    </td>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <label class="control-label" for="appointmentfor">Delayed healing:</label>
+                        <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <select id="appointmentfor" name="n12" type="text" class="form-control control-label">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </td>
+                    </td>
+                    {% comment %} <td align="right" class="text-success" style="font-weight:Bold;">Irritability: </td>
+                    <td align="left"><input type="text" class="form-control" placeholder="Enter 1/0" name="n11"></td>
+               
+                    <td align="right" class="text-success" style="font-weight:Bold;">Delayed healing: </td>
+                    <td align="left"><input type="text" class="form-control" placeholder="Enter 1/0" name="n12"></td> {% endcomment %}
+                </tr>
+                <tr>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <label class="control-label" for="appointmentfor">Partial paresis</label>
+                        <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <select id="appointmentfor" name="n13" type="text" class="form-control control-label">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </td>
+                    </td>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <label class="control-label" for="appointmentfor">Muscle stiffness</label>
+                        <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <select id="appointmentfor" name="n14" type="text" class="form-control control-label">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </td>
+                    </td>
+                    {% comment %} <td align="right" class="text-success" style="font-weight:Bold;">Partial paresis </td>
+                    <td align="left"><input type="text" class="form-control" placeholder="Enter 1/0" name="n13"></td>
+                
+                    <td align="right" class="text-success" style="font-weight:Bold;">Muscle stiffness</td>
+                    <td align="left"><input type="text" class="form-control" placeholder="Enter 1/0" name="n14"></td> {% endcomment %}
+                </tr>
+                <tr>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <label class="control-label" for="appointmentfor">Alopecia:</label>
+                        <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <select id="appointmentfor" name="n15" type="text" class="form-control control-label">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </td>
+                    </td>
+                    <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <label class="control-label" for="appointmentfor">Obesity:</label>
+                        <td align="right" class="control-label text-success" style="font-weight:Bold;">
+                        <select id="appointmentfor" name="n16" type="text" class="form-control control-label">
+                            <option value="Yes" selected>Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </td>
+                    </td>
+                    {% comment %} <td align="right" class="text-success" style="font-weight:Bold;">Alopecia: </td>
+                    <td align="left"><input type="text" class="form-control" placeholder="Enter 1/0" name="n15"></td>
+                
+                    <td align="right" class="text-success" style="font-weight:Bold;">Obesity</td>
+                    <td align="left"><input type="text" class="form-control" placeholder="Enter 1/0" name="n16"></td> {% endcomment %}
+                </tr>
+
+            </table>
+            <div  class="row d-flex justify-content-center">
+                <input type="submit" class="text-centerbtn btn-outline-success my-3 btn-lg">   
+            </div>
+        </form>
+    </div>
+{% comment %} 
+  <form  action="result" >
+        <!-- Form start -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label text-primary" for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md">
+                </div>
+            </div>
+    
+
+            <!-- Text input-->
+            <div class="col-md-6">
+              <div class="form-group">
+                  <label class="control-label" for="number">Age</label>
+                  <input id="number" name="age" type="number" placeholder="enter your Age" class="form-control input-md">
+              </div>
+          </div>
+           <!-- Text input-->
+           <div class="col-md-12">
+            <div class="form-group">
+                <label class="control-label" for="appointmentfor">Gender</label>
+                <select id="appointmentfor" name="Polyuria" class="form-control">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+        </div>
+          <!-- Text input-->
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="control-label" for="appointmentfor">Polyuria</label>
+                    <select id="appointmentfor" name="Polyuria" class="form-control">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="control-label" for="appointmentfor">sudden_weight_loss
+                    </label>
+                    <select id="appointmentfor" name="sudden_weight_loss" class="form-control">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+             <!-- Text input-->
+             <div class="col-md-12">
+                <div class="form-group">
+                    <label class="control-label" for="appointmentfor">weakness</label>
+                    <select id="appointmentfor" name="weakness" class="form-control">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+             <!-- Text input-->
+             <div class="col-md-12">
+                <div class="form-group">
+                    <label class="control-label" for="appointmentfor">Polyuria</label>
+                    <select id="appointmentfor" name="Polyuria" class="form-control">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+             <!-- Text input-->
+             <div class="col-md-12">
+                <div class="form-group">
+                    <label class="control-label" for="appointmentfor">Polyuria</label>
+                    <select id="appointmentfor" name="Polyuria" class="form-control">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="control-label" for="appointmentfor">Polydipsia
+                    </label>
+                    <select id="appointmentfor" name="Polydipsia" class="form-control">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Button -->
+            <div class="col-md-12">
+                <button type="submit" name='submit' class="btn btn-primary my-3 btn-lg">Predict Diabetes</button>
+            </div>
+        </div>
+    </form>
+    <!-- form end --> {% endcomment %}
+    
+</div>
+ 
+
+{% endblock body %}
